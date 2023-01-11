@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Q1244 {
+public class Q1244_silver4 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// 입력
