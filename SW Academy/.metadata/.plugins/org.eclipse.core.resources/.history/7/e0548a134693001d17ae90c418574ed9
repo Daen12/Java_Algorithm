@@ -1,0 +1,11 @@
+package 사전학습;
+
+public class Q2063_D1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		int num = in.nextInt();
+	}
+
+}

@@ -9,26 +9,26 @@ public class Q10818_bronze3 {
 
 		int num = sc.nextInt();
 		int[] array = new int[num];
-		for(int i=0; i<num; i++) {
+		for (int i = 0; i < num; i++) {
 			array[i] = sc.nextInt();
 		}
-		
-		//내장메서드를 쓰는 방법! Arrays.sort()
-//		Arrays.sort(array);
-//		
-//		System.out.println(array[0] + " " + array[num-1]);
-		
+
+		// 내장메서드를 쓰는 방법! Arrays.sort()
+		// Arrays.sort(array);
+		//
+		// System.out.println(array[0] + " " + array[num-1]);
+
 		int min = array[0];
 		int max = array[0];
-				
+
 		for (int i = 0; i < num; i++) {
 			int target = array[i];
-			
-			if (min>=target) {
+
+			if (min >= target) {
 				min = target;
-			} 
-				
-			if(max<=target) {
+			}
+
+			if (max <= target) {
 				max = target;
 			}
 		}
