@@ -1,0 +1,38 @@
+package 사전학습;
+
+import java.util.Scanner;
+
+public class Q2058_D1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		
+//		 방법1. 어레이에 입력받은 수가 차례로 담김.
+//		String num = in.next();
+		
+//		int[] array = new int[num.length()];
+//		for (int i = 0; i < num.length(); i++) {
+//			array[i] = num.charAt(i) - '0';
+//		}
+//		
+//		int answer = 0;
+//		for(int i=0; i< array.length; i++) {
+//			answer+=array[i];
+//		}
+//		System.out.println(answer);
+		
+//		방법2. 수학적으로 계산하기
+		
+		int number = in.nextInt();
+		int answer = 0;
+		while(number!=0) { //122
+			answer += number%10;
+			number = number/10;	
+		}
+		System.out.println(answer);
+		
+		in.close();
+	}
+
+}
