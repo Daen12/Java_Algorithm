@@ -24,7 +24,7 @@ public class Q2068_D1 {
 			System.out.println("#" + (i + 1) + " " + max);
 
 		}
-
+		sc.close();
 	}
 
 }

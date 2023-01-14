@@ -16,6 +16,7 @@ public class Q2071_D1 {
 			System.out.println("#" + (i + 1) + " " + Math.round(sum / 10));
 
 		}
+		in.close();
 
 	}
 }

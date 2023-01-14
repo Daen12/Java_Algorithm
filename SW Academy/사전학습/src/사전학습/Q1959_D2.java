@@ -50,6 +50,7 @@ public class Q1959_D2 {
 			System.out.println("#"+(i+1)+" "+max);
 			
 		}
+		sc.close();
 
 	}
 

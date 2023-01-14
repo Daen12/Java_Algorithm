@@ -1,6 +1,6 @@
 package 사전학습;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Q1936_D1 {
@@ -21,5 +21,6 @@ public class Q1936_D1 {
 			System.out.println(array[Math.max(A, B)]);
 
 		}
+		in.close();
 	}
 }
