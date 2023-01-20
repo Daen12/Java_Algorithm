@@ -1,4 +1,4 @@
-package 실습1;
+package Day4.실습1;
 
 public class CarTest {
 	public static void main(String[] args) {
@@ -31,9 +31,9 @@ public class CarTest {
 		
 		System.out.println("-------------searchByModelName(K가 들어가는 모델)-------------");
 		Car[] searchList = cm.searchByModelName("K");
-		for(Car c : searchList)
+		for(Car c : searchList) {
 			System.out.println(c);
-		
+		}
 		
 	}
 }
