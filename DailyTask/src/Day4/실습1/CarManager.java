@@ -25,7 +25,7 @@ public class CarManager {
 		}
 		return result;
 	}
-	Arrays.copyofRange(List,0,size)
+//	Arrays.copyofRange(List,0,size)
 
 	// 해당 인자를 가진 자동차 배열 반환
 	public Car[] searchByModelName(String modelName) {
