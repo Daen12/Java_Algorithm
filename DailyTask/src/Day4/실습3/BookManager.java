@@ -1,4 +1,4 @@
-package Day5.실습3;
+package Day4.실습3;
 
 import java.util.Arrays;
 
