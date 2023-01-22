@@ -1,4 +1,4 @@
-package Day4.실습1;
+package Day5.실습1;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class CarManager {
 	public boolean add(Car car) {
 		if (size < 100) {
 			carList[size] = car;
-			++size;
+			size++;
 			return true;
 		} else {
 			return false;
@@ -42,6 +42,33 @@ public class CarManager {
 		}
 		return result;
 	}
-	
+
+	public ElectricCar[] getElectricCars() {
+		int cnt = 0;
+		for(int i=0; i<this.size; i++) {
+			if(carList[i] instanceof ElectricCar) {
+				cnt++;
+			}
+		}
+		if(cnt == 0) return null;
+		
+		int idx = 0;
+		ElectricCar[] result = new ElectricCar[cnt];
+		for(int i=0; i<this.size; i++) {
+			if(carList[i] instanceof ElectricCar) {
+				//ElectricCar은 자식클래스. =큰집에서 작은집으로.
+				result[idx++] = (ElectricCar)carList[i];
+			}
+		}
+		return result;
+	}
+	//등록된 모든 차량의 주행거리의 합 반환
+	public int getTotalMileage() {
+		int sum = 0;
+		for(int i=0; i<this.size; i++) {
+			sum+= carList[i].getMileage();
+		}
+		return sum;
+	}
 }
 

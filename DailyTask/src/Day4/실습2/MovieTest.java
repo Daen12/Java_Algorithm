@@ -29,14 +29,10 @@ public class MovieTest {
 		}
 		System.out.println("======== Search by title ========");
 		
-		Movie[] searched = mm.searchByTitle("Ssaf Life");
+		Movie[] searched = mm.searchByTitle("Ssafy Life");
 		for(Movie c : searched) {
 			System.out.println(c);
 		}
-		
-
-		
-
 		
 	}
 

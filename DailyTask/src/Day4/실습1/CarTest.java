@@ -21,8 +21,8 @@ public class CarTest {
 		
 		CarManager cm = new CarManager();
 		
-		cm.add(car1);
-		cm.add(car2);
+		System.out.println(cm.add(car1));
+		System.out.println(cm.add(car2));
 		
 		System.out.println("-------------getList-------------");
 		Car[] carList = cm.getList();
@@ -37,3 +37,4 @@ public class CarTest {
 		
 	}
 }
+

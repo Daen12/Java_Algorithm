@@ -1,4 +1,4 @@
-package Day4.실습1;
+package Day5.실습1;
 
 public class Car {
 

@@ -27,21 +27,22 @@ public class UserTest {
 		for(User list : searchList) {
 			System.out.println(list);
 		}
-		
-		
+		System.out.println("----------");
 		// 일반 사용자 리스트만 가져와서 toString 으로 출력
 		User[] genuserList = um.getUsers();
 		for(User gen : genuserList) {
 			System.out.println(gen);
 		}
-		
+		System.out.println("----------");
+
 		
 		// VipUsers 출력 
 		User[] vipuserList = um.getVipUsers();
 		for(User vip : vipuserList) {
 			System.out.println(vip);
 		}
-		
+		System.out.println("----------");
+
 		//사용자들의 평균 나이 출력
 		System.out.println(um.getAgeAvg());
 		
