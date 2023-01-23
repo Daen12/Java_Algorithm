@@ -27,8 +27,8 @@ public class CarTest {
 		}
 
 		System.out.println("-------------getElectricCars-------------");
-		for (ElectricCar ec : cm.getElectricCars())
-			System.out.println(ec);
+		for (ElectricCar c : cm.getElectricCars())
+			System.out.println(c);
 
 		System.out.println("등록된 자동차들의 총 주행 거리 : " + cm.getTotalMileage());
 	}

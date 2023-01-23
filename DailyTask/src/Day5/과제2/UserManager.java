@@ -66,7 +66,6 @@ public class UserManager {
 		if(cnt==0) return null;
 		
 		VipUser[] res = new VipUser[cnt];
-		
 		for(int i=0, index=0; i<this.size; i++) {
 			if(userList[i] instanceof VipUser) {
 				res[index++] = (VipUser)userList[i];
