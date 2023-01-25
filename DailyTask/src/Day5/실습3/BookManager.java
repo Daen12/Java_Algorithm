@@ -14,9 +14,9 @@ public class BookManager {
 			System.out.println("memory overload");
 		}
 	}
-	public Book[] remove(String isbn) {
+	public void remove(String isbn) {
 		int index = 0;
-		//finding a index to be removed
+		//finding an index to be removed
 		for(int i=0; i<this.size; i++) {
 			if(books[i].getIsbn().equals(isbn)) {
 				index = i;
@@ -28,7 +28,7 @@ public class BookManager {
 			if(i == index) continue;
 			array[k++] = books[i];
 		}
-		return array;
+		books = array;
 		
 	}
 	public Book[] getList() {

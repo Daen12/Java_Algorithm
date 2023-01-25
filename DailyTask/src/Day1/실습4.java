@@ -17,7 +17,7 @@ public class 실습4 {
 
 			String first = input.split("")[0];
 			String second = input.split("")[1];
-
+			//배열에서 인덱스 뽑기 : Arrays.asList(array).indexOf("sth");
 			String gan = "갑을병정무기경신임계";
 			String zi = "자축인묘진사오미신유술해";
 			int firstidx = gan.indexOf(first) + 1;
