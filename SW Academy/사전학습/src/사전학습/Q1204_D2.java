@@ -28,7 +28,6 @@ public class Q1204_D2 {
 			for(int t=0; t<array.length; t++) {
 				System.out.print(array[t]);
 				System.out.print(" ");
-				
 			}
 			System.out.println("/n");
 			System.out.println(max);

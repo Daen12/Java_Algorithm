@@ -18,9 +18,11 @@ public class BookManager {
 	public void remove(String isbn) {
 		int index = 0;
 		// finding an index to be removed
+		//없는경우 만들기.
 		for (int i = 0; i < this.size; i++) {
 			if (books[i].getIsbn().equals(isbn)) {
 				index = i;
+				break;
 			}
 		}
 		// create another array and move elements from books

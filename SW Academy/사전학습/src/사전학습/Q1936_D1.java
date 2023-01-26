@@ -10,7 +10,7 @@ public class Q1936_D1 {
 		Scanner in = new Scanner(System.in);
 		int A = in.nextInt();
 		int B = in.nextInt();
-
+		//0,1,2,3 인덱스 가질 수 있게
 		String[] array = new String[4];
 		array[A] = "A";
 		array[B] = "B";
