@@ -54,13 +54,13 @@ public class MovieManagerImpl implements IMovieManager {
 	}
 	
 	@Override
-	public Movie[] getSeriesMovies() {
-			List<Movie> templist = new ArrayList<>();
+	public SeriesMovie[] getSeriesMovies() {
+			List<SeriesMovie> templist = new ArrayList<>();
 			
 			for(int i=0; i<movieList.size(); i++) {
-				if(movieList.get(i) instanceof SeriesMovie) templist.add(movieList.get(i));
+				if(movieList.get(i) instanceof SeriesMovie) templist.add((SeriesMovie) movieList.get(i));
 			}
-			Movie[] res = new Movie[templist.size()];
+			SeriesMovie[] res = new SeriesMovie[templist.size()];
 			
 			return templist.toArray(res);
 			
