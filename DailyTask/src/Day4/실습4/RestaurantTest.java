@@ -17,26 +17,36 @@ public class RestaurantTest {
 		System.out.println(rev2.toString());
 		
 		RestaurantManager rm = new RestaurantManager();
+		rm.addRestaurant(res1);
+		rm.addRestaurant(res2);
+		rm.addReview(rev1);
+		rm.addReview(rev2);
 		
-		System.out.println("-- Search by resid 101 --");
+		System.out.println("\n-- Search by resid 101 --");
 		System.out.println(rm.searchByResid(101));
 		
 		System.out.println(rm.removeRestaurant(401));
-		System.out.println(rm.removeReview(101));
+		System.out.println(rm.removeReview(1)); //리뷰는 1번째 지워야 함.
 		
-		System.out.println("-- Restaurant 401 removed --");
+		System.out.println("-- Restaurant 401 & Review1 removed --");
 
 		for(Restaurant r : rm.getRestaurantList()) {
 			System.out.println(r);
 		}
-		System.out.println("-- get restaurant review 101 --");
-
-		System.out.println(rm.getRestaurantReview(101));
 		
-		Restaurant res = new Restaurant(101, "을밀대", "대전", "냉면", 4);
+		System.out.println("-- get restaurant review 401 --");
 		
-		rm.updateRestaurant(res);
+		//형태가 review[] 배열로 반환되므로for 루프를 돌려서 하나씩뽑아야 함!!
+//		for(Review r : rm.getRestaurantReview(401)) {
+//			System.out.println(r);
+//		}
+		
 		System.out.println("-- 101 restaurant updated --");
+		Restaurant res = new Restaurant(101, "을밀대", "대전", "냉면", 4);
+		System.out.println(rm.updateRestaurant(res));
+		for(Restaurant r : rm.getRestaurantList()) {
+			System.out.println(r);
+		}
 
 		
 		

@@ -37,13 +37,12 @@ public class RestaurantManager {
 		}
 		Restaurant[] newArray = new Restaurant[restaurantSize-1];
 		for(int i=0, k=0; i<restaurantSize; i++) {
-			if(Restaurants[i].getResid() == resid) {
 				if(i == index) continue;
 				newArray[k++] = Restaurants[i];
 			}
-		}
+		
 		Restaurants = newArray;
-		restaurantSize--;
+		--restaurantSize;
 		return flag;
 	}
 	
@@ -59,14 +58,13 @@ public class RestaurantManager {
 		}
 		Review[] newArray = new Review[--this.reviewSize];
 		for(int i=0, k=0; i<this.reviewSize; i++) {
-			if(Reviews[i].getReviewid() == reviewid) {
 				if(i == index) continue;
 				newArray[k++] = Reviews[i];
 			}
-		}
 		Reviews = newArray;
 		return flag;
 	}
+	
 	//get restaurant list
 	public Restaurant[] getRestaurantList() {
 		return Arrays.copyOfRange(Restaurants, 0, restaurantSize);
@@ -110,6 +108,7 @@ public class RestaurantManager {
 		}
 		return flag;
 	}
+	
 	//add review
 	public boolean addReview(Review review) {
 		if(reviewSize<1000) {
