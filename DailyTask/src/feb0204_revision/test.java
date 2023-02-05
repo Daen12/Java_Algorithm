@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class test {
 	public static void main(String[] args) {
-		Dig d = new Dig("new name");
+		Dig d = new Dig();
 		
-		System.out.println(d.name);
+		System.out.println(d);
 	}
 }
