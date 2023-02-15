@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Q1979 {
+class Q1979_D2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -17,58 +17,38 @@ class Q1979 {
             }
 
             // 길이 k만큼만 1인 열의 갯수
+            // 가로
             int count = 0;
             for (int i = 0; i < N; i++) {
                 int lengthCheck = 0;
                 for (int j = 0; j < N; j++) {
                     // 만약에 해당 원소가 1이면
                     if (map[i][j] == 1) {
-                        for (int k = 0; k < K; k++) {
-                            // 옆으로 K만큼 돌면서
-                            // 1이면 lengthcheck
-                            if (map[i][j + k] == 1) {
-                                lengthCheck++;
-                                // 만약 k=K-1까지 갔을때,
-                                if (k == K - 1 && map[i][j + k + 1] == 1) {
-                                    // k=K일때도 1이면 lengthCheck -1
-                                    lengthCheck--;
-                                }
-                            } else
-                                break; // 아니면 브레이크
-                        }
-
+                        lengthCheck++;
+                        if (lengthCheck == K)
+                            count++;
+                        if (lengthCheck > K)
+                            count--;
+                        lengthCheck = 0;
                     }
                 }
-                // 만약 lengthcheck 결과가 K이면 count++
-                if (lengthCheck == K)
-                    count++;
             }
+            // 세로
             for (int i = 0; i < N; i++) {
                 int lengthCheck = 0;
                 for (int j = 0; j < N; j++) {
                     // 만약에 해당 원소가 1이면
-                    if (map[j][i] == 1) {
-                        for (int k = 0; k < K; k++) {
-                            // 옆으로 K만큼 돌면서
-                            // 1이면 lengthcheck
-                            if (map[j + k][i] == 1) {
-                                lengthCheck++;
-                                // 만약 k=K-1까지 갔을때,
-                                if (k == K - 1 && map[j + k + 1][i] == 1) {
-                                    // k=K일때도 1이면 lengthCheck -1
-                                    lengthCheck--;
-                                }
-                            } else
-                                break; // 아니면 브레이크
-                        }
-
+                    if (map[i][j] == 1) {
+                        lengthCheck++;
+                        if (lengthCheck == K)
+                            count++;
+                        if (lengthCheck > K)
+                            count--;
+                        lengthCheck = 0;
                     }
                 }
-                // 만약 lengthcheck 결과가 K이면 count++
-                if (lengthCheck == K)
-                    count++;
             }
+            System.out.println(count);
         }
-
     }
 }
