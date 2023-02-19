@@ -51,9 +51,7 @@ public class Q1974_스도쿠검증_D2 {
                     break; // 아니면 틀림
                 }
             }
-
             System.out.printf("#%d %d\n", t, answer);
-
         }
     }
 }

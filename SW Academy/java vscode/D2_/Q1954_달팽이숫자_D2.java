@@ -20,12 +20,8 @@ public class Q1954_달팽이숫자_D2 {
             map[r][c] = num++;
             bool[r][c] = true;
             while (num <= N * N) {
-                // dir=2
-                // 0 0 0
-                // 0 0 0
-                // 0 0 0
-                r = r + dr[dir % 4]; // 2
-                c = c + dc[dir % 4]; // 2
+                r = r + dr[dir % 4]; 
+                c = c + dc[dir % 4]; 
                 // 새로운 인덱스가 범위 안에 있고(AND) 안갔던 곳이면 채우기
                 if (r < N && 0 <= r && c < N && 0 <= c && !bool[r][c]) {
                     map[r][c] = num++;
