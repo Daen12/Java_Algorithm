@@ -67,8 +67,7 @@ public class Q1065_silver4 {
 		for (int i = 0; i < str.length(); i++) {
 			array[i] = str.charAt(i) - '0';
 		}
-		//십의자리수가
-		
+		// 십의자리수가
 
 		System.out.println(Arrays.toString(array));// 그냥 배열을 리턴하면 해당 배열이 저장된 메모리 주소를 출력함.
 
@@ -82,25 +81,25 @@ public class Q1065_silver4 {
 			int tens = array[1];
 			int ones = array[2];
 			int answer = 99 + (array[0] - 1) * 5;
-			
-			//start를 기점으로 오름차순 수가 5개 있는 배열 생성하기  
+
+			// start를 기점으로 오름차순 수가 5개 있는 배열 생성하기
 			int start = (int) Math.ceil((double) hundreds / 2);
 			int[] ref = new int[5];
-			for(int i=start; i<start+5; i++) {
-				ref[i-start] = i;
+			for (int i = start; i < start + 5; i++) {
+				ref[i - start] = i;
 			}
-			//만약 십의자리수가 한수배열에 있으면 
-			if(Arrays.asList(ref).contains(tens)) {
-				//십의자리수를 고려하여 한수를 만들고
+			// 만약 십의자리수가 한수배열에 있으면
+			if (Arrays.asList(ref).contains(tens)) {
+				// 십의자리수를 고려하여 한수를 만들고
 				int diff = hundreds - tens;
-				array[2] = tens-diff;
-				int newHansu = String.join("", array);
-				int original = str
+				array[2] = tens - diff;
+				// int newHansu = String.join("", array);
+				// int original = str
 			} else {
-				
+
 			}
-			
-			System.out.println(n);
+
+			// System.out.println(n);
 
 		}
 		// 세자릿수이면
@@ -111,7 +110,6 @@ public class Q1065_silver4 {
 		// 그 수가 현재수보다 크면 indexof N을 더한다.
 		// 십의자리수가 해당 백의자리수 한수배열에 없으면 패스
 		// 763 99 + 30 +
-		
 
 	}
 

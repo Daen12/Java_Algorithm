@@ -19,7 +19,6 @@ public class Q1954_D2 {
                 for (int c = j; c < j + flag; c++) {
                     arr[i][c] = num;
                     num++;
-                    System.out.println(arr[i][c]);
                 }
                 if (flag == 1)
                     break;
@@ -29,14 +28,12 @@ public class Q1954_D2 {
                 for (int r = i + 1; r <= i + flag; r++) {
                     arr[r][j] = num;
                     num++;
-                    System.out.println(arr[r][j]);
                 }
                 i = i + flag;
                 // 왼쪽 옆으로
                 for (int c = j - 1; j - flag <= c; c--) {
                     arr[i][c] = num;
                     num++;
-                    System.out.println(arr[i][c]);
                 }
                 j = j - flag;
                 flag--;
@@ -44,7 +41,6 @@ public class Q1954_D2 {
                 for (int r = i - 1; i - flag <= r; r--) {
                     arr[r][j] = num;
                     num++;
-                    System.out.println(arr[r][j]);
                 }
                 i = i - flag;
                 j += 1;

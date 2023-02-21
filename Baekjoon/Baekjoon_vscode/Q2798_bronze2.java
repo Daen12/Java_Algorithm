@@ -20,6 +20,9 @@ public class Q2798_bronze2 {
             for (int j = i + 1; j <= N - 2; j++) {
                 for (int k = j + 1; k <= N - 1; k++) {
                     sumList.add(Near - (arr[i] + arr[j] + arr[k]));
+                    //아예 리스트 만들지 않고, 요기서 
+                    //3개수의 합이 Near넘지않고 max보다 크다면 max 재할당해주는 방법도!
+
                 }
             }
         }
