@@ -7,8 +7,8 @@ public class Q3985_롤케이크_bronze1 {
 		Scanner in = new Scanner(System.in);
 		int L = in.nextInt();
 		// 케이크 배열 만들기
-		int[] cake = new int[L];
-		int T = in.nextInt();
+		int[] cake = new int[L+1]; //10
+		int T = in.nextInt(); //3
 		int[][] index = new int[T][2]; // {{2,4}, {7,8}, {6,9}}
 		// 입력받은 인덱스 이중배열에 저장
 		// 인덱스 차가 가장 큰 사람이 첫번째 답.
@@ -28,7 +28,7 @@ public class Q3985_롤케이크_bronze1 {
 			Arrays.fill(cake, index[t][0], index[t][1] + 1, t + 1);
 		}
 		// cake배열을 카운트소트
-		int[] count = new int[T + 1];
+		int[] count = new int[T + 1]; //4
 		for (int i = 0; i < L; i++) {
 			count[cake[i]]++;
 		}
