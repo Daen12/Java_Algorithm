@@ -58,10 +58,6 @@ public class Q10163_색종이ver2_bronze1 {
 
 		for (int t = 0; t < T; t++) {
 			int Sum = 0;
-			// System.out.println(R[t]);
-			// System.out.println(R[t] + y[t]);
-			// System.out.println(C[t]);
-			// System.out.println(C[t] + x[t]);
 			for (int r = R[t]; r < R[t] + y[t]; r++) {
 				for (int c = C[t]; c < C[t] + x[t]; c++) {
 					Sum += maps[t][r][c];
