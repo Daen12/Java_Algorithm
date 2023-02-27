@@ -8,11 +8,11 @@ public class Q17413_단어뒤집기2_silver3 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         char[] input = br.readLine().toCharArray();
-        System.out.println(Arrays.toString(input));
+        // System.out.println(Arrays.toString(input));
         // <> 사이는 그대로 프린트, 그외는 받아서 거꾸로 출력
         int i = 0;
         String answer = "";
-        System.out.println(input.length);
+        // System.out.println(input.length);
         while (i < input.length) {// 5
             if (input[i] == '<') { // 태그 열리면
                 StringBuilder sb = new StringBuilder();
