@@ -23,7 +23,6 @@ class Q4698_테네스의특별한소수_D3 {
                 list.add(i);
             }
         }
-        System.out.println(list.get(3));
 
         Scanner in = new Scanner(System.in);
         int T = in.nextInt();

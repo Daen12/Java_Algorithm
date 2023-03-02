@@ -19,10 +19,8 @@ class Q7087_문제제목붙이기_D3 {
                 titles.add(first);
             }
             Object[] titleArr = titles.toArray();
-            // System.out.println(Arrays.toString(titleArr));
             int start = (int) titleArr[0]; // 첫 원소 65
 
-            // System.out.println(start);
             int end = 0;
             boolean isA = true;
             boolean isOne = false;
