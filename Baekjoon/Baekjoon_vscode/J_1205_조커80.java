@@ -1,5 +1,3 @@
-package solving_club;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -18,27 +16,28 @@ public class J_1205_조커80 {
 		int max = 0;
 		int count = 1;
 		int useJoker = Joker;
-		for (int i = Joker; i < N - 1; i++) {
+		for (int i = Joker; i <= N - 1; i++) {
+
 			int diff = cards[i + 1] - cards[i];
-			//n이 끝일때 / 끝이 아닐때
-			//0의 개수가 숫자의 개수보다 크면 -> 0의 개수만큼 스트레이트 
-			if(i != N-2) {
-		        if (diff == 1) { //정렬 시 앞의 카드와 1 차이나면 count++
-	                count++;
-	            } else {
-	                if (diff-1 > 0 && diff - 1 <= useJoker) { //필요 장수(연속 같은 카드 아닌경우)
-	                	useJoker -= (diff - 1);
-	                    count+=(diff);
-	                } else {
-	                	count+=useJoker;
-	                    // 카운트의 max갱신
-	                    if (count > max) {
-	                        max = count;
-	                    }
-	                    count = 1;
-	                    useJoker = Joker;
-	                }
-	            }
+			// n이 끝일때 / 끝이 아닐때
+			// 0의 개수가 숫자의 개수보다 크면 -> 0의 개수만큼 스트레이트
+			if (i != N - 2) {
+				if (diff == 1) { // 정렬 시 앞의 카드와 1 차이나면 count++
+					count++;
+				} else {
+					if (diff - 1 > 0 && diff - 1 <= useJoker) { // 필요 장수(연속 같은 카드 아닌경우)
+						useJoker -= (diff - 1);
+						count += (diff);
+					} else {
+						count += useJoker;
+						// 카운트의 max갱신
+						if (count > max) {
+							max = count;
+						}
+						count = 1;
+						useJoker = Joker;
+					}
+				}
 			} else {
 				if (diff == 1) { // 정렬 시 앞의 카드와 1 차이나면 count++
 					count++;
@@ -58,6 +57,6 @@ public class J_1205_조커80 {
 				}
 			}
 		}
-		System.out.println(max>Joker? max : Joker);
+		System.out.println(max > Joker ? max : Joker);
 	}
 }
