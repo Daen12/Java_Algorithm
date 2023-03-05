@@ -25,9 +25,6 @@ public class Q2578_빙고_silver4 {
             for (int r = 0; r < 5; r++) {
                 for (int c = 0; c < 5; c++) {
                     if (bingo[r][c] == number) {
-                        // System.out.println(r);
-                        // System.out.println(c);
-
                         isBingo[r][c] = true; // 해당 칸 true로 바꾸기
                         // 이미 부른 숫자에 대해선 다시 안부름
                         // 가로 세로 확인
@@ -48,7 +45,6 @@ public class Q2578_빙고_silver4 {
                             }
                         }
                         // 대각선은 중복되면 안댐.
-
                         for (int d1 = 0; d1 < 5; d1++) {
                             if (!isBingo[d1][d1]) {
                                 isdiag1 = false;
@@ -64,11 +60,6 @@ public class Q2578_빙고_silver4 {
                                 break;
                             }
                         }
-
-                        // System.out.println(isBingoX + " " + isBingoY + " " + isdiag1 + " " +
-                        // isdiag2);
-                        // System.out.println(BingoX + " " + BingoY + " " + diag1 + " " + diag2);
-
                         if (isBingoX)
                             num += BingoX;
                         if (isBingoY)
