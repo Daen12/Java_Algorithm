@@ -1,2 +1,1 @@
-
-            tempc = nc;
+i
