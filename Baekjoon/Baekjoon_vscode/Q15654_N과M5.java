@@ -25,14 +25,12 @@ class Q15654_N과M5 {
 
     public static void backTracking(int idx) {
         if (idx == M) {// 깊이가 M에 도달하면
-
             for (int i = 0; i < M; i++) {
                 sb.append(arr[i] + " ");
             }
             sb.append("\n");
             return;
         }
-
         for (int i = 0; i < N; i++) {
             if (!isUsed[i]) {
                 arr[idx] = nums[i];
