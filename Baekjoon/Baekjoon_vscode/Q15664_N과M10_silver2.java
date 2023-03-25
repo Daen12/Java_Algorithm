@@ -40,7 +40,6 @@ public class Q15664_N과M10_silver2 {
 		// int lastNum = 0;
 		for (int i = idx; i < N; i++) {
 			if (!isUsed[i] && nums[i] != lastNum) {// 사용되지 않았으면
-
 				// 마지막 숫자가 현재 들어갈 숫자가 아니면
 				stack.push(nums[i]);
 				lastNum = nums[i];
