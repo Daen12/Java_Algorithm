@@ -14,16 +14,14 @@ public class MyPowerSet {
             count++;
             return;
         }
-        // �꽑�깮�븳寃쎌슦
         stack.push(arr[index]);
         backTracking(index + 1);
         stack.pop();
-        // �꽑�깮 �븞�븳 寃쎌슦
         backTracking(index + 1);
     }
 
     public static void main(String args[]) {
-        n = 3;
+        n = 4;
         arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = i + 1;

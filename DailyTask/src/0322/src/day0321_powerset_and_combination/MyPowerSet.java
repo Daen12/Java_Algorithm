@@ -1,5 +1,3 @@
-package PS_2.day0321_powerset_and_combination;
-
 import java.util.Stack;
 
 public class MyPowerSet {
