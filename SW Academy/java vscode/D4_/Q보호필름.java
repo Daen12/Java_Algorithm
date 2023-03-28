@@ -11,8 +11,7 @@ public class Q보호필름 {
 	static int R, C, K;
 	static int min;
 	static List<Integer[]> list = new ArrayList<>();
-//	static int[] list;
-//	static boolean[] select;
+
 	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
