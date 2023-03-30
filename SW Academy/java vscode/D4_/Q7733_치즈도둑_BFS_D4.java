@@ -11,7 +11,6 @@ public class Q7733_치즈도둑_BFS_D4 {
 	// 누적된 상태
 	static int[][] freezer;
 	static boolean[][] visited;
-	static boolean[][] pathCheck;
 	static int N;
 	static int cnt;
 	static int maxCnt;
@@ -33,7 +32,7 @@ public class Q7733_치즈도둑_BFS_D4 {
 		Scanner in = new Scanner(System.in);
 		int T = in.nextInt();
 		for (int t = 1; t <= T; t++) {
-			maxCnt = 0;
+			maxCnt = 0;// 덩어리가 한개일때가 최소이므로, maxCnt = 1로 시작하는게 논리적으로 맞음.
 			int maxValue = 0;
 			N = in.nextInt();
 			freezer = new int[N][N];
@@ -44,7 +43,7 @@ public class Q7733_치즈도둑_BFS_D4 {
 					maxValue = Math.max(maxValue, freezer[r][c]);
 				}
 			}
-			for (int i = 0; i <= maxValue; i++) {// 몇일째?
+			for (int i = 1; i <= maxValue; i++) {// 몇일째?
 				cnt = 0;
 				for (int r = 0; r < N; r++) {
 					for (int c = 0; c < N; c++) {
@@ -54,10 +53,10 @@ public class Q7733_치즈도둑_BFS_D4 {
 					}
 				}
 				// n일차 그래프 다 바꿔준다음에
-				pathCheck = new boolean[N][N];
+				visited = new boolean[N][N];
 				for (int r = 0; r < N; r++) {
 					for (int c = 0; c < N; c++) {
-						if (!pathCheck[r][c] && freezer[r][c] != 0) {
+						if (!visited[r][c] && freezer[r][c] != 0) {
 							BFS(r, c);// 치즈 한덩어리만큼 돌고 나옴.
 						}
 					}
@@ -69,7 +68,6 @@ public class Q7733_치즈도둑_BFS_D4 {
 	}
 
 	static void BFS(int R, int C) {
-		visited = new boolean[N][N];
 		queue = new LinkedList<>();
 		// 시작 정점을 큐에 삽입한다.
 		queue.offer(new Node(R, C));
@@ -87,7 +85,6 @@ public class Q7733_치즈도둑_BFS_D4 {
 				if (!visited[nr][nc] && freezer[nr][nc] != 0) {
 					// 방문하지 않았으면서 길이 있으면
 					visited[nr][nc] = true;
-					pathCheck[nr][nc] = true;
 					queue.offer(new Node(nr, nc));
 				}
 			}
