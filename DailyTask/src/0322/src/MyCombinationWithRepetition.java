@@ -28,8 +28,6 @@ public class MyCombinationWithRepetition {
     }
 
     public static void main(String args[]) {
-        // nHr 援ы븯湲�
-        // nHr= n+r�닋1 C r
         n = 6;
         r = 3;
         arr = new int[n];

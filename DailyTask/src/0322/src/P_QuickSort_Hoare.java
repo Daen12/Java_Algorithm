@@ -37,10 +37,8 @@ public class P_QuickSort_Hoare {
             }
         }
         // if escaped the loop,
-        // L pointer has passed R pointer
-        // swap R value with the pivot
-        // because R rests in the right-most index of values that are equal to | smaller
-        // than pivot.
+        // L pointer has passed R pointer. swap R value with the pivot
+        // because R rests in the right-most index of values that are equal to | smaller than pivot.
         int temp = arr[R];
         arr[R] = arr[left];
         arr[left] = temp;

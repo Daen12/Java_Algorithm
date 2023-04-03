@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Q17070_파이프옮기기1_ {
+public class Q17070_파이프옮기기1_gold5 {
 	// 1,1에서 시작해서
 	// 가로, 세로, 대각선에 대해 재귀함수 만들기
 	// 종료 조건 : 가로나 세로가 N에 도달하면!
