@@ -63,8 +63,6 @@ public class Prim_PriorityQueue {
 		//인접리스트
 		List<Edge>[] adjList = new ArrayList[V];
 		//바구니 초기화
-//		List<Edge> al = new ArrayList<>();
-//		Arrays.fill(adjList, al);
 		for(int i=0; i<V; i++) {
 			adjList[i] = new ArrayList<>();
 		}
