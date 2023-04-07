@@ -19,47 +19,45 @@ public class Q2206_벽부수고이동하기3_gold3 {
 		}
 	}
 
-	static int N, M, ans, min;
+	static int N, M, ans;
 	static boolean[][][] visited;
-	static int[][] map, original;
+	static int[][] map;
 	static Queue<Kan> queue;
-	static boolean demolished;
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		N = in.nextInt();// 4
 		M = in.nextInt();// 6
 		map = new int[N][M];
-		original = new int[N][M];
 		for (int r = 0; r < N; r++) {
 			String[] line = in.next().split("");
 			for (int c = 0; c < M; c++) {
 				map[r][c] = Integer.parseInt(line[c]);
 			}
 		}
-//		for(int[] line : map) {
-//			System.out.println(Arrays.toString(line));
-//		}
-		min = Integer.MAX_VALUE;
-		boolean isPossible = false;
-		// 벽 부수기
+		// 시작지점 = 도착지점인 경우 (bfs에서는 사방탐색 하느라 못잡음!)
+		if (N - 1 == 0 && M - 1 == 0) {
+			System.out.println(1);
+			System.exit(0);
+		}
 
+		// 벽 부수기
 		ans = -1;
 		BFS();
-//		for(int[] line : map) {
-//			System.out.println(Arrays.toString(line));
-//		}
+		// for(int[] line : map) {
+		// System.out.println(Arrays.toString(line));
+		// }
 		System.out.println(ans);
 	}
 
 	public static void BFS() {
 		queue = new LinkedList<>();
 		visited = new boolean[2][N][M];
-		demolished = false;
 		queue.offer(new Kan(0, 0, 1, 0));
-		visited[0][0][0] = true;// 안부숨.
+		visited[0][0][0] = true;
 		int[] dc = { 1, 0, -1, 0 };
 		int[] dr = { 0, 1, 0, -1 };
+
 		while (!queue.isEmpty()) {
 			Kan k = queue.poll();
 			for (int d = 0; d < 4; d++) {// 사방탐색
@@ -67,6 +65,12 @@ public class Q2206_벽부수고이동하기3_gold3 {
 				int nc = k.C + dc[d];
 				if (nr < 0 || nc < 0 || nr >= N || nc >= M)
 					continue;// 범위밖이면 아래 안봄
+
+				// 도착지점에 도달 시
+				if (nr == N - 1 && nc == M - 1) {
+					ans = k.cnt + 1; // ans가 -1이다 = 목적지에 닫지 못함.
+					return;// 먼저 도착했으면 종료
+				}
 
 				// 다음칸에 벽이 있을 때 (1) 벽을 부순적이 있는지 체크 (2) 그 벽을 방문한 적이 있는지 체크
 				if (map[nr][nc] == 1) {// 부셨으면 1 아니면 0
@@ -82,10 +86,6 @@ public class Q2206_벽부수고이동하기3_gold3 {
 						visited[k.demolished][nr][nc] = true;
 						queue.offer(new Kan(nr, nc, k.cnt + 1, k.demolished));
 					}
-				}
-				// 도착지점에 도달 시
-				if (nr == N - 1 && nc == M - 1) {
-					ans = k.cnt + 1; // ans가 -1이다 = 목적지에 닫지 못함.
 				}
 			}
 		}
