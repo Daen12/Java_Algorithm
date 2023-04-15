@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Q1949_등산로조성2 {
+public class Q1949_등산로조성_me {
 
 	static int N, K, length;
 	static boolean[][] visited;

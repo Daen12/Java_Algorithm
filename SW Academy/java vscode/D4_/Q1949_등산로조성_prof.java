@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Q1949_등산로조성 {
+public class Q1949_등산로조성_prof {
 	// BFS
 	// 클래스에 r,c,cnt저장
 	// 큐에서 꺼낸 후 사방탐색, 만약 1이고 방문되지 않았으면 큐에 넣은 후 cnt++
