@@ -7,7 +7,6 @@ public class Q15686_치킨배달_gold5 {
     // 치킨집을 n개 고르고
     // 조합으로 치킨집 구한 후
     // 각 집마다 구한 조합n개 중 최솟값 거리 구해서 누적 합 산출
-    // 시작.
     static int N, M, chi, ans;
     static int[][] map;
     static List<int[]> houses, chickens;

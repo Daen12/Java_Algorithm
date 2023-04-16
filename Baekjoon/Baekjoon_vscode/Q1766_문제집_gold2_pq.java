@@ -55,7 +55,7 @@ public class Q1766_문제집_gold2_pq {
             sb.append(node + " ");
             for (int n : graph[node]) {// 인접 노드들에 대해서
                 inD[n]--;// 먼저 진입차수 배열 다 바꿔주고
-                if (inD[n] == 0 && !visited[n]) {
+                if (inD[n] == 0) {
                     queue.offer(n);
                 }
             }
