@@ -50,12 +50,7 @@ public class Q1774_우주신과의교감_gold3 {
                 edges[k++] = new Edge(i + 1, j + 1, cal(arr[i][0], arr[i][1], arr[j][0], arr[j][1]));
             }
         }
-        // edges의 간선개수는 k-1개
-        // Arrays.sort(edges, new Comparator<Edge>() {
-        // public int compare(Edge o1, Edge o2) {
-        // return o1.dist - o2.dist < 0 ? -1 : 1;
-        // }
-        // });
+  
         Arrays.sort(edges);
         // Kruskal!
         double total = 0;
