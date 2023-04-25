@@ -39,7 +39,6 @@ public class Q1766_문제집_gold2_pq {
         visited = new boolean[N + 1];
         TopSort();
         System.out.println(sb);
-
     }
 
     public static void TopSort() {
