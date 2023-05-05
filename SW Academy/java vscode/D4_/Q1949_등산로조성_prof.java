@@ -8,17 +8,6 @@ public class Q1949_등산로조성_prof {
 	// BFS
 	// 클래스에 r,c,cnt저장
 	// 큐에서 꺼낸 후 사방탐색, 만약 1이고 방문되지 않았으면 큐에 넣은 후 cnt++
-	// public static class Kan {
-	// int R, C, cnt;
-	// int demolished;
-
-	// public Kan(int r, int c, int cnt, int demolished) {
-	// this.R = r;
-	// this.C = c;
-	// this.cnt = cnt;
-	// this.demolished = demolished;
-	// }
-	// }
 
 	static int N, K, length;
 	static boolean[][] visited;
@@ -87,7 +76,7 @@ public class Q1949_등산로조성_prof {
 				}
 			}
 			if (!visited[nr][nc] && map[nr][nc] - K < map[R][C]) {
-				path[nr][nc] = 1;
+				//path[nr][nc] = 1;
 				DFS(nr, nc, cnt + 1, false);
 			}
 
