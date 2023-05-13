@@ -15,17 +15,18 @@ import java.util.TreeSet;
 public class Q18111_마인크래프트_silver2_2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
         int B = Integer.parseInt(st.nextToken());
+
         Integer[] arr = new Integer[N * M];
 
         int max = 0;
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < N * M; i++) {
+            st = new StringTokenizer(br.readLine());
             arr[i] = Integer.parseInt(st.nextToken());
             max = Math.max(max, arr[i]);
             min = Math.min(min, arr[i]);
