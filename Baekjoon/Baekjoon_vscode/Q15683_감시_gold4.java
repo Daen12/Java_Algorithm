@@ -16,13 +16,6 @@ public class Q15683_감시_gold4 {
     static int[] dr = { 0, 1, 0, -1 }; // 오른, 아래, 왼, 위 순서
     static int[] dc = { 1, 0, -1, 0 };
 
-    public static void makeMapCopy() {
-        mapCopy = new int[N][M];
-        for (int j = 0; j < N; j++) {
-            mapCopy[j] = map[j].clone();
-        }
-    }
-
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         N = in.nextInt();
@@ -83,28 +76,34 @@ public class Q15683_감시_gold4 {
 
     }
 
-    public static void checkkFour(int seq, int cnt) {
-        // seq에 따라 cnt값 최대로...
-        // 012 123 230 301
+    // public static void checkkFour(int seq, int cnt) {
+    // // seq에 따라 cnt값 최대로...
+    // // 012 123 230 301
 
-        while (seq < four.size()) {
-            int R = four.get(seq)[0];
-            int C = four.get(seq)[1];
-            makeMapCopy();
-            // 첫번째 경우
-            int max = shoot(R, C, 0) + shoot(R, C, 1) + shoot(R, C, 2);
-            // 두번째 경우
-            makeMapCopy();
-            int compare1 = shoot(R, C, 1) + shoot(R, C, 2) + shoot(R, C, 3);
-            max = Math.max(max, compare1);
-            // 3번째 경우
-            makeMapCopy();
-            int compare2 = shoot(R, C, 0) + shoot(R, C, 2) + shoot(R, C, 3);
-            max = Math.max(max, compare2);
-            // 두번째 경우
-            makeMapCopy();
-            int compare3 = shoot(R, C, 1) + shoot(R, C, 0) + shoot(R, C, 3);
-            max = Math.max(max, compare3);
+    // while (seq < four.size()) {
+    // int R = four.get(seq)[0];
+    // int C = four.get(seq)[1];
+    // makeMapCopy();
+    // // 첫번째 경우
+    // int max = shoot(R, C, 0) + shoot(R, C, 1) + shoot(R, C, 2);
+    // // 두번째 경우
+    // makeMapCopy();
+    // int compare1 = shoot(R, C, 1) + shoot(R, C, 2) + shoot(R, C, 3);
+    // max = Math.max(max, compare1);
+    // // 3번째 경우
+    // makeMapCopy();
+    // int compare2 = shoot(R, C, 0) + shoot(R, C, 2) + shoot(R, C, 3);
+    // max = Math.max(max, compare2);
+    // // 두번째 경우
+    // makeMapCopy();
+    // int compare3 = shoot(R, C, 1) + shoot(R, C, 0) + shoot(R, C, 3);
+    // max = Math.max(max, compare3);
+    // }
+    // }
+    public static void makeMapCopy(int[][] map) {
+        mapCopy = new int[N][M];
+        for (int j = 0; j < N; j++) {
+            mapCopy[j] = map[j].clone();
         }
     }
 
@@ -133,6 +132,7 @@ public class Q15683_감시_gold4 {
         for (int i = 0; i < N; i++) {
             mapCopy[i] = map[i].clone();
         }
+        // makeMapCopy(map);
         // cnt copy
         int cntCopy = cnt;
 
