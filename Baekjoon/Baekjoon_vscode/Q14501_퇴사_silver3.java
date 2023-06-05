@@ -13,29 +13,32 @@ public class Q14501_퇴사_silver3 {
             days[i] = in.nextInt();
             income[i] = in.nextInt();
         }
+        findMaxBenefit(1, 0, 0);
+
+        System.out.println(maxIncome);
     }
 
-    // 1 0 0
-    // 4 10 0
-    // 5 30 10
-    // 7 45 30
     public static void findMaxBenefit(int day, int revenue, int prevR) {
-
-        if (day == N) {// 마지막날에 상담 가능하면 그날 비용 더한게 최종비용
-            if (days[N - 1] == 1) {
-                maxIncome = revenue + income[N - 1];
-            } else {
-                return;
-            }
-        } else if (day > N) {
+        if (day - 1 == N) { // 마지막까지 상담 마침.
             maxIncome = Math.max(revenue, maxIncome);
-
+        }
+        if (day >= N) {// 마지막날에 상담 가능하면 그날 비용 더한게 최종비용
+            if (day == N && days[N - 1] == 1) {
+                revenue = revenue + income[N - 1];
+                maxIncome = Math.max(revenue, maxIncome);
+            } else if (day == N) { // 마지막날에 상담 불가하면 리턴 (남은 날짜가 최대 날짜보다 많음)
+                maxIncome = Math.max(revenue, maxIncome);
+            } else {
+                maxIncome = Math.max(prevR, maxIncome);
+            }
+            return;
         }
 
-        for (int i = day; i < N; i++) {
+        for (int i = day; i <= N; i++) {
+            // revenue = prevR;
             // 현재 날짜 + 상담일 = 재귀로 넘길 날짜
             // 이익도 마찬가지
-            findMaxBenefit(i + days[i], revenue + income[i], revenue);
+            findMaxBenefit(i + days[i - 1], revenue + income[i - 1], revenue);
         }
     }
 }

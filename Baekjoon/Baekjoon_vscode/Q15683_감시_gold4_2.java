@@ -45,15 +45,7 @@ public class Q15683_감시_gold4_2 {
                 }
             }
         }
-        // System.out.println("===cctv===");
-        // for (int[] i : cctv) {
-        // System.out.print(Arrays.toString(i) + " ");
-        // }
-        // System.out.println("===five===");
-        // for (int[] i : five) {
-        // System.out.print(Arrays.toString(i) + " ");
-        // }
-        // five는 고정이므로 있다면 감시표시!
+
         int fives = 0;
         if (five.size() != 0) {
             for (int i = 0; i < five.size(); i++) {
@@ -79,14 +71,7 @@ public class Q15683_감시_gold4_2 {
     }
 
     public static void watch(int seq, int[][] map, int cnt) {
-        // maxCnt보다 cnt가 커지면 리턴시키기
-
         if (seq == cctv.size()) {
-            // for (int[] line : map) {
-            // System.out.println(Arrays.toString(line));
-            // }
-            // System.out.println("cnt :" + cnt);
-
             if (maxCnt < cnt) {
                 maxCnt = cnt;
             }
@@ -165,32 +150,6 @@ public class Q15683_감시_gold4_2 {
                 watch(seq + 1, map, cnt);
             }
         }
-
-        // for (int dir = 0; dir < 4; dir++) {
-        // // map 원상복귀
-        // for (int i = 0; i < N; i++) {
-        // map[i] = mapCopy[i].clone();
-        // }
-        // // cnt 원상복귀
-        // cnt = cntCopy;
-
-        // System.out.println("dir equals " + dir);
-        // for (int i = 0; i < 4; i++) {
-        // if (i == dir)
-        // continue; // dir빼고
-        // cnt += shoot(R, C, i);
-        // } // 한 경우의 수 map에 그리기 완성
-
-        // // for (int[] line : map) {
-        // // System.out.println(Arrays.toString(line));
-        // // }
-
-        // // 다음 순서로 넘어가기
-        // checkFour(seq + 1, map, cnt);
-        // System.out.println("Here!");
-
-        // }
-
     }
 
     public static int shoot(int R, int C, int dir) {
