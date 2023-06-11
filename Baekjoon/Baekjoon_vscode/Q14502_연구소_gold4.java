@@ -5,6 +5,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class Q14502_연구소_gold4 {
+    static int n;
     static int[][] map;
     static int safeZone, N, M;
     static List<int[]> virus;
