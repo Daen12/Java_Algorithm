@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class TopologicalSort_Queue {
+	//진입차수를 나타내는 indegree 배열도 만들어놓기.
+	//각 '노드'를 기준으로 구성이 됨.
+	//간선이 E개. 반복문 (0-E, A시작정점 B끝정점) indegree[B++]; 이렇게!
+	static Queue<Integer> queue;
+	static int V,E;
+	static int[] inDegree;
+	
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		V = in.nextInt();//9
+		E = in.nextInt();//9
+		inDegree = new int[V+1];
+		//위상정렬에 사용할 그래프 2차원 리스트로 구현
+//		ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
+		ArrayList<Integer>[] graph = new ArrayList[V+1];
+		for(int i=0; i<V+1; i++) {
+			graph[i] = new ArrayList<Integer>();//리스트안의 값 리스트로 초기화
+		}
+		
+		for(int i=0; i<E; i++) {//간선의 개수만큼
+			int st = in.nextInt();
+			int ed = in.nextInt();
+			graph[st].add(ed);
+			inDegree[ed]++;//인덱스는 노드번호를 나타냄.
+		}
+		queue = new LinkedList<>();
+		TopologicalSort();
+		
+	}
+	
+	public static void TopologicalSort(){
+		//큐에서 값 꺼내고
+		//꺼낸값의 인접노드 진입차수 --
+		//진입차수 0이 있다면 큐에 넣기
+		for(int i=1; i<V+1; i++) {//진입차수 배열 돌면서
+			
+		}
+	}
+}

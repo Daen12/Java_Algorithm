@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class TopologicalSort_Stack {
+	//Queue의 역순으로 알고리즘이 진행된다.
+	
+	//각 '노드'를 기준으로 구성이 됨.
+	
+	static Stack<Integer> stack;
+	static int V,E;
+	static boolean[] visited;
+	
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		V = in.nextInt();//9
+		E = in.nextInt();//9
+		//위상정렬에 사용할 그래프 2차원 리스트로 구현
+//		ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();
+		ArrayList<Integer>[] graph = new ArrayList[V+1];
+		for(int i=0; i<V+1; i++) {
+			graph[i] = new ArrayList<Integer>();//리스트안의 값 리스트로 초기화
+		}
+		
+		for(int i=0; i<E; i++) {//간선의 개수만큼
+			int st = in.nextInt();
+			int ed = in.nextInt();
+			graph[st].add(ed);
+		}
+		visited = new boolean[V+1];
+		stack = new Stack<>();
+		TopologicalSort();
+		
+	}
+	
+	public static void TopologicalSort(){
+	
+
+
+	}
+}
