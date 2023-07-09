@@ -1,2 +1,4 @@
 /.metadata/
 *.class
+toss.java
+node_module/

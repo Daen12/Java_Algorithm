@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Q15650_N과M2_silver3 {
@@ -12,7 +14,7 @@ public class Q15650_N과M2_silver3 {
 
         DFS(1, 0);
     }
-
+    
     public static void DFS(int at, int k) {
         if (k == M) {
             for (int i = 0; i < M; i++) {

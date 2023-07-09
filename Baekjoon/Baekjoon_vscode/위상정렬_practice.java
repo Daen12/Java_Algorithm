@@ -29,7 +29,6 @@ public class 위상정렬_practice {
 
     public static void TopologicalSort() {
         queue = new LinkedList<>();
-
         // 진입차수 배열 돌면서, indegree가 0이면 큐에 넣기
         for (int i = 1; i < N + 1; i++) {
             if (indegree[i] == 0)

@@ -56,4 +56,5 @@ public class 크루스칼_practice {
     public static void union(int x, int y) {
         parent[findSet(y)] = findSet(x);
     }
+ 
 }
