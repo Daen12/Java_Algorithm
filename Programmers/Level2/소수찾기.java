@@ -54,6 +54,5 @@ public class 소수찾기 {
             visited[i] = false;
 
         }
-
     }
 }
