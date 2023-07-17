@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -15,6 +15,7 @@ public class Q6118_숨바꼭질_silver1 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
         N = in.nextInt();// 6 헛간 개수
         int M = in.nextInt();// 7 이어진 수
         graph = new ArrayList[N + 1];
@@ -28,10 +29,9 @@ public class Q6118_숨바꼭질_silver1 {
             graph[ed].add(st);
         }
         DFS();
-        // Collections.sort(list, (Integer i1, Integer i2) -> {
-        // return i1 - i2;
-        // });
-        System.out.println(maxLevel + ' ' + list.size());
+
+        Collections.sort(list);
+        System.out.printf("%d %d %d", list.get(0), maxLevel, list.size());
     }
 
     public static void DFS() {
@@ -43,7 +43,6 @@ public class Q6118_숨바꼭질_silver1 {
         list = new ArrayList<>();
         int cnt = 0;
         while (!queue.isEmpty()) {
-            System.out.println("Poll");
             int[] pa = queue.poll();
             for (int child : graph[pa[0]]) {
                 if (!visited[child]) {
